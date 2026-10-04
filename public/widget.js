@@ -115,7 +115,7 @@
   const iframe = document.createElement("iframe");
 
   iframe.src =
-    `http://localhost:5173/?restaurant=${encodeURIComponent(
+    `https://booking.atrionovo.com/?restaurant=${encodeURIComponent(
       restaurant
     )}`;
 
