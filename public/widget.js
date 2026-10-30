@@ -6,11 +6,12 @@
     return;
   }
 
-  const restaurant = script.dataset.restaurant;
+  // data-business is the new name; data-restaurant keeps working.
+  const restaurant = script.dataset.business || script.dataset.restaurant;
 
   if (!restaurant) {
     console.error(
-      "AtrioNovo Booking Widget: Missing data-restaurant attribute."
+      "AtrioNovo Booking Widget: Missing data-business attribute."
     );
     return;
   }
@@ -21,7 +22,9 @@
 
   const button = document.createElement("button");
 
-  button.textContent = "Reserveer";
+  // Optional data-label sets the button text, for example
+  // "Boek een massage". Restaurants keep "Reserveer".
+  button.textContent = script.dataset.label || "Reserveer";
 
   Object.assign(button.style, {
     position: "fixed",
@@ -115,11 +118,11 @@
   const iframe = document.createElement("iframe");
 
   iframe.src =
-    `https://booking.atrionovo.com/?restaurant=${encodeURIComponent(
+    `https://booking.atrionovo.com/?business=${encodeURIComponent(
       restaurant
     )}`;
 
-  iframe.title = "Restaurant booking";
+  iframe.title = "Booking";
   iframe.loading = "lazy";
 
   Object.assign(iframe.style, {

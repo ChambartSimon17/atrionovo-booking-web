@@ -1,0 +1,98 @@
+/* =====================================================
+   MASSAGE BOOKING
+   Builds on the booking widget styles in index.css.
+===================================================== */
+
+.massage-muted {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.massage-services {
+  display: grid;
+  gap: 10px;
+}
+
+.massage-service {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  background: white;
+  color: var(--black);
+  text-align: left;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.massage-service:hover {
+  border-color: #999;
+}
+
+.massage-service.selected {
+  border-color: var(--black);
+  background: var(--soft);
+  box-shadow: 0 0 0 1px var(--black);
+}
+
+.massage-service-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.massage-service-price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.massage-service-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.massage-service-description {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.massage-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.massage-slot {
+  min-width: 72px;
+  padding: 10px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background: white;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.massage-slot:hover {
+  border-color: #999;
+}
+
+.massage-slot.selected {
+  border-color: var(--black);
+  background: var(--black);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .booking-widget {
+    margin: 0 auto;
+    padding: 24px 18px;
+    border-radius: 0;
+  }
+}
